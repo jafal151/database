@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Save your vioce notes :D</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body style="background-color: #00FFFF">
+        <div class="tab">
+          <button class="tabs" onclick="openTab(event, 'Home')">Save notes</button>
+          <button class="tabs" onclick="openTab(event, 'search_course')">Search </button>
+        </div>
+
+        <div class="container" id="Home">
+
+            <h1>Voice Controlled Notes App</h1>
+            <p class="page-description">voice to text converter :D</p>
+
+            <h3 class="no-browser-support">Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</h3>
+
+            <div class="app"> 
+                <h3>Add New Note</h3>
+                <div class="input-single">
+                    <input type="text"placeholder="Course title" id="course" required>
+                    <textarea id="note-textarea" placeholder="Create a new note by typing or using voice recognition." rows="6"></textarea>
+                </div>         
+                <button id="start-record-btn" title="Start Recording" style="background-color: #1ABC9C;">Start</button>
+                <button id="pause-record-btn" title="Pause Recording" style="background-color: #1ABC9C;">Pause</button>
+                <button id="save-note-btn" title="Save Note" style="background-color: #1ABC9C;">Save</button>   
+                <p id="recording-instructions">Press the <strong>Start Recognition</strong> button and allow access.</p>
+
+
+            </div>
+
+        </div>
+        <div class="container" id = "search_course">
+            <h1>Search for messages</h1>
+            <!--
+            <input type="text"placeholder="from date (dd/m/yy)" id="fromDate" style="float: left; width: 35%;">
+            <input type="text"placeholder="to date (dd/m/yy)" id="toDate" style="float: left; width: 35%; margin-left: 2%; margin-bottom: 1%;">-->
+            
+            <input type="date" id="fromDate"  min="2020-01-01" max="2021-01-01" style="width: 49% ; float: left; ">
+            <input type="date" id="toDate"  min="2020-01-01" max="2021-01-01" style="width: 49% ; float: left; margin-left: 2%">
+
+            <input type="text"placeholder="search by word" id="wordSearch" style="float: left; width: 100%; margin-bottom: 1%;">
+
+
+            <input type="text"placeholder="Course title" id="courseSearch" style="float: left; width: 100%; margin-bottom: 1%; " >
+            
+            <button id="search-notes" title="search course" style="width: 100%; float: left; margin-bottom: 1%; background-color: #1ABC9C;" onclick="all_messages()">search course</button>
+            <div id="search-div" ></div>
+
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+
+    </body>
+</html>
+
+
